@@ -32,7 +32,7 @@
                         </Button>
                             <Label x:Name="levelMouche"
                                    HorizontalOptions="Center"
-                                   Text="1">
+                                   Text="Nv.1">
                             </Label>
                         </StackLayout>
                         <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="1">
@@ -52,7 +52,70 @@
                             </Button>
                         </StackLayout>
                     </StackLayout>
-                </StackLayout>
+
+                        <StackLayout Orientation="Vertical" Spacing="1">
+                            <StackLayout Orientation="Horizontal" Padding="10,20" Spacing="1">
+                                <StackLayout Orientation="Vertical" Spacing="0">
+                                    <Button Text="Souris"
+                                x:Name="buttonSouris"
+                                Clicked="buttonSouris_Clicked">
+                                    </Button>
+                                    <Label x:Name="levelSouris"
+                                   HorizontalOptions="Center"
+                                   Text="Nv.1">
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="1">
+                                    <Label x:Name="valueSouris"
+                                   HorizontalOptions="Center">
+                                    </Label>
+                                    <ProgressBar ProgressColor="Green"
+                                         x:Name="progressSouris"
+                                         Progress="0"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="FillAndExpand">
+                                    </ProgressBar>
+                                    <Button Text="+"
+                                x:Name="buttonPlusSouris"
+                                Clicked="buttonPlusSouris_Clicked"
+                                HeightRequest="42">
+                                    </Button>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+
+                        <StackLayout Orientation="Vertical" Spacing="1">
+                            <StackLayout Orientation="Horizontal" Padding="10,20" Spacing="1">
+                                <StackLayout Orientation="Vertical" Spacing="0">
+                                    <Button Text="Oiseau"
+                                x:Name="buttonOiseau"
+                                Clicked="buttonOiseau_Clicked">
+                                    </Button>
+                                    <Label x:Name="levelOiseau"
+                                   HorizontalOptions="Center"
+                                   Text="Nv.1">
+                                    </Label>
+                                </StackLayout>
+                                <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="1">
+                                    <Label x:Name="valueOiseau"
+                                   HorizontalOptions="Center">
+                                    </Label>
+                                    <ProgressBar ProgressColor="Green"
+                                         x:Name="progressOiseau"
+                                         Progress="0"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="FillAndExpand">
+                                    </ProgressBar>
+                                    <Button Text="+"
+                                x:Name="buttonPlusOiseau"
+                                Clicked="buttonPlusOiseau_Clicked"
+                                HeightRequest="42">
+                                    </Button>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    
+                    </StackLayout>
                 </ScrollView>
             </StackLayout>
         </StackLayout>
