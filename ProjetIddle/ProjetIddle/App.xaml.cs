@@ -1,6 +1,7 @@
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ProjetIddle.Views;
 
 [assembly: XamlCompilation (XamlCompilationOptions.Compile)]
 namespace ProjetIddle
@@ -11,7 +12,7 @@ namespace ProjetIddle
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			MainPage = new Money();
 		}
 
 		protected override void OnStart ()

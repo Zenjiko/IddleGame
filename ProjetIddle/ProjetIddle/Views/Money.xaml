@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="DarkGray"
+             x:Class="ProjetIddle.Views.Money">
+    <ContentPage.Content>
+        <StackLayout Orientation="Horizontal" Spacing="0">
+            
+            <StackLayout Orientation="Vertical" Padding="10,5" BackgroundColor="Silver">
+                <Image 
+                    Source="logo.png"
+                    HeightRequest="50">
+                </Image>
+                <Button Text="Profil"></Button>
+                <Button Text="Money"></Button>
+            </StackLayout>
+            
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                <Frame HorizontalOptions="FillAndExpand">
+                    <Label Text="0"
+                           x:Name="argentTotal"
+                           TextColor="Black"
+                           HorizontalOptions="Center"></Label>
+                </Frame>
+                <StackLayout Orientation="Vertical">
+                    <StackLayout Orientation="Horizontal" Padding="10,20">
+                        <Button Text="Mouche"
+                                x:Name="buttonMouche"
+                                Clicked="buttonMouche_Clicked"></Button>
+                        <StackLayout Orientation="Vertical">
+                            <ProgressBar ProgressColor="Green"
+                                         x:Name="progressMouche"
+                                         Scale="6"
+                                         Progress="1"
+                                         WidthRequest="2"
+                                         HorizontalOptions="FillAndExpand">
+                            </ProgressBar>
+                            <Label Text="1" Margin="15,-20,0,0"></Label>
+                        </StackLayout>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
