@@ -14,31 +14,43 @@ namespace ProjetIddle.Views
 	{
         int valueMouche = 1;
         int tmp;
+
         public Money ()
 		{
 			InitializeComponent ();
+            valeurMouche.Text = valueMouche.ToString()+"€";
 		}
 
         private void buttonMouche_Clicked(object sender, EventArgs e)
         {
             var updateRate = 1000 / 30f; // 30Hz
             double step = updateRate / (1 * 3 * 1000f);
-            Device.StartTimer(TimeSpan.FromMilliseconds(updateRate), () =>
+            if (progressMouche.Progress == 0)
             {
+                Device.StartTimer(TimeSpan.FromMilliseconds(updateRate), () =>
+            {
+
                 if (progressMouche.Progress < 1)
                 {
                     Device.BeginInvokeOnMainThread(() => progressMouche.Progress += step);
                     return true;
-                } else if (progressMouche.Progress == 1)
+                }
+                else if (progressMouche.Progress == 1)
                 {
                     Device.BeginInvokeOnMainThread(() => progressMouche.Progress = 0);
                     tmp += valueMouche;
-                    argentTotal.Text = tmp.ToString();
+                    argentTotal.Text = tmp.ToString() + "€";
                     return false;
                 }
 
                 return false;
             });
+            }
+        }
+
+        private void buttonPlus_Clicked(object sender, EventArgs e)
+        {
+
         }
     }
 }

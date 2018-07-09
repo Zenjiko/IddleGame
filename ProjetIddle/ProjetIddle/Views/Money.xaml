@@ -17,25 +17,34 @@
             
             <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
                 <Frame HorizontalOptions="FillAndExpand">
-                    <Label Text="0"
+                    <Label Text="0€"
                            x:Name="argentTotal"
                            TextColor="Black"
                            HorizontalOptions="Center"></Label>
                 </Frame>
                 <StackLayout Orientation="Vertical">
                     <StackLayout Orientation="Horizontal" Padding="10,20">
+                        <StackLayout Orientation="Vertical">
                         <Button Text="Mouche"
                                 x:Name="buttonMouche"
                                 Clicked="buttonMouche_Clicked"></Button>
-                        <StackLayout Orientation="Vertical">
+
+                        </StackLayout>
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+                            <Label x:Name="valeurMouche"
+                                   HorizontalOptions="Center">
+                            </Label>
                             <ProgressBar ProgressColor="Green"
                                          x:Name="progressMouche"
-                                         Scale="6"
-                                         Progress="1"
-                                         WidthRequest="2"
-                                         HorizontalOptions="FillAndExpand">
+                                         Progress="0"
+                                         HorizontalOptions="FillAndExpand"
+                                         VerticalOptions="FillAndExpand">
                             </ProgressBar>
-                            <Label Text="1" Margin="15,-20,0,0"></Label>
+                            <Button Text="+"
+                                x:Name="buttonPlus"
+                                Clicked="buttonPlus_Clicked"
+                                HeightRequest="42">
+                            </Button>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
