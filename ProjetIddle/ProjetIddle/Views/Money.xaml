@@ -15,23 +15,28 @@
                 <Button Text="Money"></Button>
             </StackLayout>
             
-            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="0">
                 <Frame HorizontalOptions="FillAndExpand">
                     <Label Text="0€"
                            x:Name="argentTotal"
                            TextColor="Black"
                            HorizontalOptions="Center"></Label>
                 </Frame>
-                <StackLayout Orientation="Vertical">
-                    <StackLayout Orientation="Horizontal" Padding="10,20">
-                        <StackLayout Orientation="Vertical">
+                <ScrollView>
+                <StackLayout Orientation="Vertical" Spacing="1">
+                    <StackLayout Orientation="Horizontal" Padding="10,20" Spacing="1">
+                        <StackLayout Orientation="Vertical" Spacing="0">
                         <Button Text="Mouche"
                                 x:Name="buttonMouche"
-                                Clicked="buttonMouche_Clicked"></Button>
-
+                                Clicked="buttonMouche_Clicked">
+                        </Button>
+                            <Label x:Name="levelMouche"
+                                   HorizontalOptions="Center"
+                                   Text="1">
+                            </Label>
                         </StackLayout>
-                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand">
-                            <Label x:Name="valeurMouche"
+                        <StackLayout Orientation="Vertical" HorizontalOptions="FillAndExpand" Spacing="1">
+                            <Label x:Name="valueMouche"
                                    HorizontalOptions="Center">
                             </Label>
                             <ProgressBar ProgressColor="Green"
@@ -41,13 +46,14 @@
                                          VerticalOptions="FillAndExpand">
                             </ProgressBar>
                             <Button Text="+"
-                                x:Name="buttonPlus"
-                                Clicked="buttonPlus_Clicked"
+                                x:Name="buttonPlusMouche"
+                                Clicked="buttonPlusMouche_Clicked"
                                 HeightRequest="42">
                             </Button>
                         </StackLayout>
                     </StackLayout>
                 </StackLayout>
+                </ScrollView>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

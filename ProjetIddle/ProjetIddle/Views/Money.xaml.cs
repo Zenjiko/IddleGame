@@ -12,13 +12,16 @@ namespace ProjetIddle.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Money : ContentPage
 	{
-        int valueMouche = 1;
-        int tmp;
+        double valeurMouche = 1;
+        int niveauMouche = 1;
+        double prixAchatMouche = 5;
+        double argentTotalInt;
 
         public Money ()
 		{
 			InitializeComponent ();
-            valeurMouche.Text = valueMouche.ToString()+"€";
+            valueMouche.Text = valeurMouche.ToString()+"€";
+            buttonPlusMouche.Text = prixAchatMouche.ToString()+"€";
 		}
 
         private void buttonMouche_Clicked(object sender, EventArgs e)
@@ -38,8 +41,8 @@ namespace ProjetIddle.Views
                 else if (progressMouche.Progress == 1)
                 {
                     Device.BeginInvokeOnMainThread(() => progressMouche.Progress = 0);
-                    tmp += valueMouche;
-                    argentTotal.Text = tmp.ToString() + "€";
+                    argentTotalInt += valeurMouche;
+                    argentTotal.Text = argentTotalInt.ToString() + "€";
                     return false;
                 }
 
@@ -48,9 +51,19 @@ namespace ProjetIddle.Views
             }
         }
 
-        private void buttonPlus_Clicked(object sender, EventArgs e)
+        private void buttonPlusMouche_Clicked(object sender, EventArgs e)
         {
-
+            if(argentTotalInt >= prixAchatMouche)
+            {
+                argentTotalInt -= prixAchatMouche;
+                niveauMouche++;
+                valeurMouche *= 2;
+                prixAchatMouche *= 1.5;
+                buttonPlusMouche.Text = prixAchatMouche.ToString() + "€";
+                valueMouche.Text = valeurMouche.ToString()+"€";
+                argentTotal.Text = argentTotalInt.ToString()+"€";
+                levelMouche.Text = niveauMouche.ToString();
+            }
         }
     }
 }
